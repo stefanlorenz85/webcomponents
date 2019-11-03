@@ -1,18 +1,44 @@
+import {
+    CUSTOM_ELEMENTS_SCHEMA,
+    Injector,
+    NgModule,
+} from '@angular/core';
+import { createCustomElement } from '@angular/elements';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {
+    BlogModule,
+    PostingsComponent,
+} from './blog';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BlogModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    // AppComponent,
+  ],
+  // toggle this for webcomponents and enabled bootstrap
+  entryComponents: [
+    PostingsComponent,
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,
+  ],
 })
-export class AppModule { }
+export class AppModule {
+
+  constructor(injector: Injector) {
+    const el = createCustomElement(PostingsComponent, { injector });
+    customElements.define('postings-element', el);
+  }
+  ngDoBootstrap() { }
+}
