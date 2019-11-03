@@ -1,7 +1,10 @@
 <ng-container *ngIf="postList$ | async as list">
-    <ng-container *ngFor="let item of list">
-        {{item | json}}
-        <br/>
-        <br/>
-    </ng-container>
+    <div class="list">
+        <ng-container *ngFor="let item of list">
+            <div class="posting">
+                <div class="posting__name">{{item?.name}}</div>
+                <div class="posting__body">{{item?.body}}</div>
+            </div>
+        </ng-container>
+    </div>
 </ng-container>
