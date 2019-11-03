@@ -12,3 +12,6 @@ After compiling successfully use `node elements-build.js` to bundle all Javascri
 
 ## See example
 Open example `${project}/elements/index.html`
+
+## Demo
+Go to https://test.d2so4vfycmsuxr.amplifyapp.com/
