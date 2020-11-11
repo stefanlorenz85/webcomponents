@@ -3,7 +3,6 @@ const concat=require('concat'); (async function build() {
     const files=[
         './dist/runtime-es2015.js',
         './dist/polyfills-es2015.js',
-        // './dist/scripts.js',
         './dist/main-es2015.js'
     ];
     await fs.ensureDir('elements');
