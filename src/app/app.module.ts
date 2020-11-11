@@ -38,7 +38,7 @@ export class AppModule {
 
   constructor(injector: Injector) {
     const el = createCustomElement(PostingsComponent, { injector });
-    customElements.define('postings-element', el);
+    customElements.define('sl-webcomponent', el);
   }
   ngDoBootstrap() { }
 }
